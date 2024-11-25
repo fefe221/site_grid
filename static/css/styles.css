@@ -2,25 +2,78 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+
+
+    background-image: url('/static/img/papel.png');
+    /* Caminho da sua imagem */
+    background-repeat: no-repeat;
+    /* Repete apenas na horizontal */
+    background-position: top;
+    /* Alinha no topo */
+    background-attachment: fixed;
+    /* Permanece fixo no scroll */
+    background-size: auto;
+    /* Ajusta o tamanho da imagem */
+    margin: 0;
+    /* Remove margens para cobrir toda a tela */
+    padding: 0;
+}
+
+h1 {
+    font-family: "arvo", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+    font-size: 42px;
+}
+
+h2 {
+    color: #f2911b;
+    font-size: 30px;
+    font-family: "mundial", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 header {
-    background: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+
 }
 
 header a img {
     width: 100px;
 }
 
-nav a {
-    color: white;
-    margin: 0 10px;
+header a {
     text-decoration: none;
+    color: #fff;
+    padding-left: 1rem;
 }
 
-main {
+.home {
+    background-image: url('/static/img/home.png');
+    background-repeat: no-repeat;
+    /* Evita repetição da imagem */
+    background-size: cover;
+    /* Faz a imagem preencher todo o espaço */
+    background-position: center;
+    /* Centraliza a imagem */
+
+    width: 100vw;
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.alem {
     padding: 20px;
 }
