@@ -11,6 +11,10 @@ header {
     text-align: center;
 }
 
+header a img {
+    width: 100px;
+}
+
 nav a {
     color: white;
     margin: 0 10px;
