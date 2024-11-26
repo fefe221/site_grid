@@ -93,7 +93,7 @@ header a {
     /* Centraliza a imagem */
 
     width: 100vw;
-    height: 120vh;
+    height: 110vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -103,6 +103,7 @@ header a {
 }
 
 .alem {
+    position: relative;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -110,4 +111,56 @@ header a {
     justify-content: center;
     align-items: center;
     text-align: justify;
+}
+
+.image {
+    position: absolute;
+    /* Permite posicionar em locais específicos */
+    max-width: 100%;
+    /* Escala a imagem em dispositivos menores */
+    height: auto;
+}
+
+.image-1 {
+    top: 180px;
+    left: 26%;
+    /* Ajuste da posição horizontal */
+    width: 150px;
+    /* Tamanho da imagem */
+}
+
+.image-2 {
+    bottom: 120px;
+    right: 23%;
+    width: 150px;
+}
+
+.conheca_metodologia {
+    color: #d44100;
+    font-family: "arvo", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+}
+
+
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+
+    .image-1,
+    .image-2 {
+        width: 100px;
+        /* Redimensiona imagens para telas menores */
+    }
+
+    .image-1 {
+        left: 5%;
+    }
+
+    .image-2 {
+        right: 5%;
+    }
 }
