@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}HOME{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link rel="stylesheet" href="https://use.typekit.net/wkt8gzp.css">
-    <link rel="stylesheet" href="https://use.typekit.net/wkt8gzp.css">
+    <link rel="preload" href="https://use.typekit.net/wkt8gzp.css" as="style" onload="this.rel='stylesheet'">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
         integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -20,7 +19,12 @@
         <div class="logo">
             <a href="#home"><img src="/static/img/logo.png" alt=""></a>
         </div>
-        <div class="navegacao">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="navegacao" id="navegacao">
             <nav>
                 <a href="#sobre-nos">Sobre Nós</a>
                 <a href="#servicos-grid">Serviços</a>
@@ -28,7 +32,6 @@
                     target="_blank">Contato</a>
             </nav>
         </div>
-
     </header>
     <main>
         {% block content %}
@@ -92,6 +95,24 @@
                 });
             });
         });
+
+
+
+        // Selecionar os elementos
+        const hamburger = document.getElementById('hamburger');
+        const navegacao = document.getElementById('navegacao');
+
+        // Adicionar evento de clique no botão do menu hambúrguer
+        hamburger.addEventListener('click', () => {
+            navegacao.classList.toggle('active');
+            hamburger.classList.toggle('open');
+        });
+
+        // Estilo visual para quando o botão hambúrguer é ativado
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+        });
+
 
     </script>
 </body>

@@ -2,9 +2,9 @@ html {
     scroll-behavior: smooth;
 }
 
-/* * {
+* {
     outline: 1px solid red;
-} */
+}
 
 
 
@@ -636,6 +636,31 @@ footer {
 }
 
 
+
+
+
+/* Estilo para o botão do menu hambúrguer */
+.hamburger {
+    display: none;
+    /* Oculto por padrão */
+    flex-direction: column;
+    justify-content: space-around;
+    height: 25px;
+    width: 35px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger span {
+    background-color: #fff;
+    height: 4px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+
+
 /* Responsividade */
 @media (max-width: 1100px) {
 
@@ -700,6 +725,43 @@ footer {
 
 @media (max-width: 768px) {
 
+    .hamburger {
+        display: flex;
+    }
+
+    .navegacao {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 70%;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navegacao.active {
+        transform: translateX(0);
+    }
+
+    .navegacao nav a {
+        color: #fff;
+        font-size: 3rem;
+        margin: 1rem 0;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navegacao nav a:hover {
+        text-decoration: solid #d44100 3px;
+    }
+
+
     .image-1,
     .image-2 {
         width: 100px;
@@ -737,6 +799,8 @@ footer {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .home h1 {
@@ -880,5 +944,15 @@ footer {
         text-align: center;
     }
 
+    .ex-conteudo,
+    .explicacao-metodologia,
+    .somos {
+        max-width: 100%;
+    }
+
+    header {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
 
 }
