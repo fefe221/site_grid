@@ -9,18 +9,23 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="https://use.typekit.net/wkt8gzp.css">
     <link rel="stylesheet" href="https://use.typekit.net/wkt8gzp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="/static/img/1x/Ativo 3.png" />
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <a href=""><img src="/static/img/logo.png" alt=""></a>
+            <a href="#home"><img src="/static/img/logo.png" alt=""></a>
         </div>
         <div class="navegacao">
             <nav>
-                <a href="/sobre">Sobre Nós</a>
-                <a href="/servicos">Serviços</a>
-                <a href="/contato">Contato</a>
+                <a href="#sobre-nos">Sobre Nós</a>
+                <a href="#servicos-grid">Serviços</a>
+                <a href="https://wa.me/5543988487915?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20seus%20serviços."
+                    target="_blank">Contato</a>
             </nav>
         </div>
 
@@ -31,8 +36,64 @@
         {% endblock %}
     </main>
     <footer>
-        <p>© 2024 Meu Site</p>
+        <h2>Redes Sociais:</h2>
+        <div class="redes">
+            <a href="https://www.instagram.com/grid.upgrade/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.linkedin.com/company/agencia-grid/" target="_blank"><i
+                    class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <p>2024 - GRID&#174;. Todos os direitos reservados. <a href="">Política de Privacidade</a> </p>
     </footer>
+    <script>
+        // Seleciona o elemento da barra de navegação
+        const nav = document.querySelector('header');
+
+        // Adiciona um ouvinte para o evento de scroll
+        window.addEventListener('scroll', () => {
+            // Obtém a altura total da página e calcula 2% dela
+            const scrollTrigger = window.innerHeight * 0.20;
+
+            // Verifica se o scroll ultrapassou o valor definido
+            if (window.scrollY > scrollTrigger) {
+                nav.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'; // Define a cor desejada
+            } else {
+                nav.style.backgroundColor = 'transparent'; // Retorna ao estado inicial
+            }
+        });
+
+
+
+
+        // Seleciona todos os botões de alternância
+        const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+        // Adiciona um evento de clique a cada botão
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Encontra o elemento de resposta correspondente
+                const answer = button.parentElement.nextElementSibling;
+
+                // Alterna a classe 'active' na resposta
+                answer.classList.toggle('active');
+
+                // Alterna o símbolo do botão entre "+" e "-"
+                button.textContent = answer.classList.contains('active') ? '-' : '+';
+            });
+        });
+
+
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+    </script>
 </body>
 
 </html>

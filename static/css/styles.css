@@ -1,3 +1,13 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* * {
+    outline: 1px solid red;
+} */
+
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -12,7 +22,7 @@ body {
     /* Alinha no topo */
     background-attachment: fixed;
     /* Permanece fixo no scroll */
-    background-size: auto;
+    background-size: cover;
     /* Ajusta o tamanho da imagem */
     margin: 0;
     /* Remove margens para cobrir toda a tela */
@@ -52,7 +62,6 @@ h4 {
     font-size: 6rem;
     margin: 0;
     z-index: 1;
-    margin-top: 20%;
 }
 
 h5 {
@@ -63,7 +72,6 @@ h5 {
     font-size: 10rem;
     margin: 0;
     z-index: 1;
-    margin-bottom: 60%;
 }
 
 strong {
@@ -92,8 +100,17 @@ header {
     align-items: center;
     position: fixed;
     width: 100%;
-    z-index: 0;
+    z-index: 1000;
+    background-color: transparent;
+    /* Fundo inicial */
+    transition: background-color 0.5s ease;
+    /* Transição suave */
 
+}
+
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fundo alterado */
 }
 
 header a img {
@@ -106,6 +123,11 @@ header a {
     padding-left: 1rem;
 }
 
+header a:hover {
+    text-decoration: underline #d44100 3px;
+    /* color: #d44100; */
+}
+
 .home {
     background-image: url('/static/img/home.png');
     background-repeat: no-repeat;
@@ -115,7 +137,7 @@ header a {
     background-position: center;
     /* Centraliza a imagem */
 
-    width: 100vw;
+    width: 100%;
     height: 110vh;
     display: flex;
     flex-direction: column;
@@ -127,7 +149,7 @@ header a {
 
 .alem {
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -170,8 +192,11 @@ header a {
 
 
 .somos {
-    width: 100vw;
-    height: 140vh;
+    position: relative;
+    /* Ok para contexto de posicionamento */
+    width: 100%;
+    min-height: 100vh;
+    /* Garante altura mínima */
     background-image: url('/static/img/background_somos.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -179,30 +204,31 @@ header a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
-    /* Necessário para contexto de empilhamento */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
+
 .somos-content {
-    position: relative;
-    /* Não precisa ser absoluto */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     max-width: 720px;
-    /* background-color: #d44100; */
+    min-height: 120vh;
     z-index: 2;
-    /* Maior que .image-somos1 */
-    padding: 20px;
-    /* Para evitar que o texto encoste nas bordas */
 }
+
 
 .image-somos1 {
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 100%;
     height: auto;
     z-index: 0;
-    /* Fica atrás do conteúdo */
+    /* Fica atrás do conteúdo*/
 }
 
 .somos strong {
@@ -229,30 +255,381 @@ header a {
 
 
 .servicos {
-    width: 100vw;
-    height: 100vh;
+    height: 85vh;
+    width: 100%;
+    /* 100% da largura da viewport */
     display: flex;
+    /* Garante que os itens sejam alinhados */
     justify-content: center;
+    /* Centraliza horizontalmente os itens */
     align-items: center;
-    flex-direction: row;
-    background: url('/static/img/servicos.png');
-    background-repeat: no-repeat;
+    /* Centraliza verticalmente os itens */
+    background: url('/static/img/servicos.png') no-repeat center center;
+    /* Ajusta a imagem */
     background-size: cover;
+    /* Faz a imagem preencher o container */
+    margin: 0;
+    /* Remove possíveis margens */
+    padding: 0;
+    /* Remove possíveis paddings */
 }
+
 
 .servicos-content {
-    max-width: 720px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 980px;
+
 }
 
-.box-pertgunta {
+.box-pergunta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 50%;
+}
+
+.box-pergunta h1 {
+    font-family: "arvo", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #fff;
+    font-size: 5rem;
 }
 
 .box-resposta {
     width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.box-resposta a {
+    text-decoration: none;
+    color: #83f2ff;
+    font-family: "arvo", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+
 }
 
 
+.criacao {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-image: url('/static/img/back_descricao_servicos.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* Ajusta o ponto de início da imagem */
+    height: 200vh;
+    background-color: #fff;
+}
+
+.criacao-content {
+    width: 720px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    text-align: justify;
+
+}
+
+.criacao strong {
+    color: #023440;
+    font-family: "mundial", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 0;
+}
+
+.criacao p {
+    color: #023440;
+    font-family: "arvo", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 0;
+    font-size: 20px;
+}
+
+.criacao h1 {
+    margin-top: 0;
+    font-family: "arvo", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #4e9ca5;
+    font-size: 62px;
+}
+
+.links-case {
+    width: 720px;
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+}
+
+.trafego-content {
+    width: 720px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    text-align: justify;
+
+}
+
+
+
+.metodologia-grid {
+    background-image: url('/static/img/background_metodologia_grid.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #fff;
+
+    width: 100%;
+    height: 105vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.metodologia-grid h1 {
+    font-size: 5rem;
+}
+
+.seta1 {
+    position: absolute;
+    top: 83.2%;
+}
+
+
+
+
+.explicacao-metodologia {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.titulo-conteudo {
+    margin-left: -50%;
+    margin-top: 10%;
+}
+
+.ex-conteudo {
+    display: flex;
+    flex-direction: column;
+    width: 1080px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.quadros-metodologia {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8rem;
+}
+
+.quadro {
+    padding: 20px;
+    width: 25%;
+    border: #4e9ca5 3px solid;
+    border-radius: 20px;
+}
+
+.quadro h3 {
+    font-family: "mundial", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #023440;
+}
+
+.quadro p {
+    font-family: "mundial", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #023440;
+}
+
+.titulo-conteudo h1 {
+    font-family: "arvo", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #4e9ca5;
+    font-size: 3rem;
+    margin: 0;
+
+}
+
+h1.titulo-forte {
+    font-size: 6rem;
+    margin-bottom: 4rem;
+}
+
+
+.destaque-mercado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(138, 205, 204, 0.8);
+    mix-blend-mode: multiply;
+
+}
+
+.destaque-content {
+    width: 980px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+}
+
+.destaque-content h1 {
+    color: #023440;
+}
+
+.destaque-content a {
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    padding: 20px 80px;
+    color: #f2911b;
+    background-color: #023440;
+    font-family: "Arvo", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.tirar-duvida {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tirar-duvida-title {
+    width: 720px;
+}
+
+.tirar-duvida-title h2 {
+    color: #de4700;
+    white-space: nowrap;
+    font-size: 60pt;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+
+
+.faq {
+    max-width: 720px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 8rem;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.question span {
+    font-family: "mundial", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #032c36;
+}
+
+.toggle-btn {
+    background: #8acdcc;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.answer {
+    font-family: "Arvo", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 10px;
+    font-size: 20px;
+    color: #555;
+    display: none;
+    /* Oculta a resposta por padrão */
+}
+
+.answer.active {
+    display: block;
+    /* Mostra a resposta quando ativa */
+}
+
+
+footer {
+    margin-top: 4rem;
+    max-width: 100%;
+    background-color: #1d1d1d;
+    color: #fff;
+    text-align: center;
+    padding: 40px;
+}
+
+.redes {
+    margin-bottom: 50px;
+}
+
+.fa-instagram,
+.fa-youtube,
+.fa-linkedin {
+    font-size: 50px;
+    text-decoration: none;
+    color: #6c7374;
+    padding: 10px;
+}
 
 
 /* Responsividade */

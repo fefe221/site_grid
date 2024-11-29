@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
-{% block title %}Página Inicial{% endblock %}
+{% block title %}Use GRID.{% endblock %}
 {% load static %}
 {% block content %}
-<div class="home">
+<div class="home" id="home">
     <h1>Criatividade + Estratégia + Marketing Digital</h1>
     <h2>= Seu negócio aonde você quer chegar</h2>
 </div>
@@ -15,32 +15,222 @@
     <p>Nossas estratégias de criação de conteúdo e tráfego pago são personalizadas <br>
         para otimizar o desempenho da sua marca nas redes e acelerar seus resultados.</p>
     <img src="/static/img/aspa_direita.png" alt="" class="image image-2">
-    <a href="" class="conheca_metodologia">Conheça nossa metodologia exclusiva</a>
+    <a href="#metodologia-grid" class="conheca_metodologia">Conheça nossa metodologia exclusiva</a>
 </div>
-<div class="somos">
+<div class="somos" id="sobre-nos">
+
+    <div class="somos-content">
+        <div class="content01">
+            <h4>Somos</h4>
+            <h5>assim</h5>
+        </div>
+        <div class="content02">
+            <strong>A Grid nasceu com uma nova visão:</strong>
+            <p>Unir a expertise na análise de dados do negócio e do mercado ao conhecimento
+                e práticas do marketing digital para entregar resultados reais.
+            </p>
+            <p>Somamos isso a transparência, a inovação, a dedicação ao cliente e adaptação à mudança
+                e construímos nossa cultura e valores. É nisso que acreditamos e é assim que nosso time trabalha.
+            </p>
+        </div>
+
+
+    </div>
     <img src="/static/img/somos_assim.png" alt="" class="image-somos1">
     <img src="/static/img/somos_2.png" alt="" class="image-somos1">
-    <div class="somos-content">
-        <h4>Somos</h4>
-        <h5>assim</h5>
-        <strong>A Grid nasceu com uma nova visão:</strong>
-        <p>Unir a expertise na análise de dados do negócio e do mercado ao conhecimento
-            e práticas do marketing digital para entregar resultados reais.
-        </p>
-        <p>Somamos isso a transparência, a inovação, a dedicação ao cliente e adaptação à mudança
-            e construímos nossa cultura e valores. É nisso que acreditamos e é assim que nosso time trabalha.
-        </p>
-    </div>
-    <div class="servicos">
+    <div class="servicos" id="servicos-grid">
         <div class="servicos-content">
             <div class="box-pergunta">
                 <h1>Quais os serviços que a Grid oferece?</h1>
             </div>
             <div class="box-resposta">
-                <a href="">Criação de Conteúdo</a>
-                <a href="">Tráfego Pago</a>
+                <a href="#criacao-conteudo">Criação de Conteúdo</a>
+                <a href="#trafego-conteudo">Tráfego Pago</a>
             </div>
         </div>
     </div>
 </div>
+<div class="criacao" id="criacao-conteudo">
+    <div class="criacao-content">
+        <p>Criação de Conteúdo</p>
+        <h1>Conectar & Converter</h1>
+        <strong>A disputa pela atenção do público é uma tarefa árdua, que exige preparo e estratégia.
+        </strong>
+        <p>Cuidadosamente desenhado, nosso serviço de criação de conteúdo é baseado em pesquisa, análise e
+            personalização e inclui a criação de imagens, roteirização e produção de vídeos e elaboração de textos que
+            captem a atenção do seu público e fortaleçam a sua imagem e marca. </p>
+    </div>
+    <div class="links-case">
+        <a href="" class="conheca_metodologia">Conheça nossos cases</a>
+        <a href="#metodologia-grid" class="conheca_metodologia">Conheça nossa Metodologia</a>
+    </div>
+    <div class="trafego-content" id="trafego-conteudo">
+        <p>Tráfego Pago</p>
+        <h1>Anúncio + Estratégia = Resultado</h1>
+        <strong>Se o objetivo é potencializar o alcance da sua marca, nosso serviço de tráfego pago é a solução.
+        </strong>
+        <p>A partir de uma análise aprofundada do seu negócio e do seu público e do uso de ferramentas avançadas,
+            entregamos campanhas que realmente convertem visualizações em cliques e cliques em negócio.</p>
+    </div>
+    <div class="links-case">
+        <a href="" class="conheca_metodologia">Conheça nossos cases</a>
+        <a href="#metodologia-grid" class="conheca_metodologia">Conheça nossa Metodologia</a>
+    </div>
+</div>
+<div class="metodologia-grid" id="metodologia-grid">
+    <h1>Metodologia GRID:</h1>
+    <h2>Eficiência e Resultados em cada etapa.</h2>
+    <img src="/static/img/seta1.png" alt="" class="seta1">
+</div>
+<div class="explicacao-metodologia">
+    <div class="ex-conteudo">
+        <div class="titulo-conteudo">
+            <h1>Criação de</h1>
+            <h1 class="titulo-forte">Conteúdo</h1>
+        </div>
+        <div class="quadros-metodologia">
+            <div class="quadro">
+                <img src="/static/img/logo_analise.png" alt="">
+                <h3>Análise e Planejamento:</h3>
+                <p>Estudo da marca e criação de um calendário editorial.</p>
+            </div>
+            <div class="quadro">
+                <img src="/static/img/logo_captacao.png" alt="">
+                <h3>Captação e Criação:</h3>
+                <p>Produção de fotos e vídeos, design e edições.</p>
+            </div>
+            <div class="quadro">
+                <img src="/static/img/logo_distribuicao.png" alt="">
+                <h3>Distribuição e Amplificação:</h3>
+                <p>Publicação e promoção dos conteúdos nas redes.</p>
+            </div>
+            <div class="quadro">
+                <img src="/static/img/logo_monitoramento.png" alt="">
+                <h3>Monitoramento e Ajustes</h3>
+                <p>Avaliação continua para otimizar os resultados.</p>
+            </div>
+        </div>
+
+
+        <img src="/static/img/seta2.png" alt="">
+
+
+        <div class="titulo-conteudo">
+            <h1>Tráfego</h1>
+            <h1 class="titulo-forte">Pago</h1>
+        </div>
+        <div class="quadros-metodologia">
+            <div class="quadro">
+                <img src="/static/img/logo_analise2.png" alt="">
+                <h3>Análise Inicial:</h3>
+                <p>Diagnóstico das plataformas e definição de objetivos.</p>
+            </div>
+            <div class="quadro">
+                <img src="/static/img/logo_pesquisa.png" alt="">
+                <h3>Pesquisa e Planejamento:</h3>
+                <p>Segmentação, planejamento de palavras-chave e criativos.</p>
+            </div>
+            <div class="quadro">
+                <img src="/static/img/logo_implementacao.png" alt="">
+                <h3>Implantação e Monitoramento:</h3>
+                <p>Execução de campanhas, testes A/B e otimização contínua.</p>
+            </div>
+            <div class="quadro">
+                <img src="/static/img/logo_relatorios.png" alt="">
+                <h3>Relatórios:</h3>
+                <p>Acompanhamento e insights detalhados sobre o desempenho.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="destaque-mercado">
+    <div class="destaque-content">
+        <h1>Pronto para se destacar no mercado?</h1>
+        <a href="https://wa.me/5543988487915?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20seus%20serviços."
+            target="_blank">Entrar em contato</a>
+    </div>
+</div>
+<div class="tirar-duvida">
+    <div class="tirar-duvida-title">
+        <h2>Ainda tem Dúvidas?</h2>
+    </div>
+</div>
+<div class="faq">
+    <div class="faq-item">
+        <div class="question">
+            <span>Por que contratar a GRID?</span>
+            <button class="toggle-btn">+</button>
+        </div>
+        <div class="answer">
+            Porque nosso conhecimento e processos facilitam e potencializam a obtenção de resultados. Além disso, com o
+            direcionamento certo, os resultados tendem a vir em um menor espaço de tempo e com maior assertividade uma
+            vez que as estratégias para o digital estarão embasadas em análise e método.
+        </div>
+    </div>
+    <div class="faq-item">
+        <div class="question">
+            <span>Em quanto tempo aparecerem resultados do investimento no Marketing Digital?</span>
+            <button class="toggle-btn">+</button>
+        </div>
+        <div class="answer">
+            Em média, entre 4 a 6 meses, variando conforme os objetivos.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">
+            <span>Qual a forma de contratação?</span>
+            <button class="toggle-btn">+</button>
+        </div>
+        <div class="answer">
+            Trabalhamos com contratos mensais para garantir a qualidade e continuidade dos serviços e também com
+            elaboração de projetos específicos e personalizados.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">
+            <span>Posso contratar os serviços de criação de conteúdo e tráfego pago separadamente?</span>
+            <button class="toggle-btn">+</button>
+        </div>
+        <div class="answer">
+            Sim. Mas, estratégias combinadas tendem a apresentar melhores resultados em menos tempo.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">
+            <span>A GRID oferece outros serviços?</span>
+            <button class="toggle-btn">+</button>
+        </div>
+        <div class="answer">
+            Sim. A criação de conteúdo e o tráfego pago são nossa maior expertise, mas oferecemos serviços
+            personalizados para o marketing digital e consultoria para outras aplicações.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">
+            <span>Quanto custa contratar os serviços da GRID?</span>
+            <button class="toggle-btn">+</button>
+        </div>
+        <div class="answer">
+            Depende da necessidade da sua empresa e envolve muitos aspectos, porém quase sempre é mais vantajoso do que
+            manter uma equipe interna. Assim, com um investimento bem menor, sua empresa tem os serviços de uma equipe
+            completa e especializada.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">
+            <span>Como acompanho o desempenho das campanhas?</span>
+            <button class="toggle-btn">+</button>
+        </div>
+        <div class="answer">
+            Fornecemos relatórios periódicos detalhados com análises e recomendações.
+        </div>
+    </div>
+
+</div>
+
 {% endblock %}
