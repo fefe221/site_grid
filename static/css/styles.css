@@ -2,9 +2,9 @@ html {
     scroll-behavior: smooth;
 }
 
-/* * {
+* {
     outline: 1px solid red;
-} */
+}
 
 
 
@@ -96,10 +96,11 @@ p {
 header {
     display: flex;
     justify-content: space-around;
-    padding: 1rem;
+    padding: 1rem 0rem;
     align-items: center;
     position: fixed;
-    width: 100%;
+    max-width: 100vw;
+    min-width: 100vw;
     z-index: 1000;
     background-color: transparent;
     /* Fundo inicial */
@@ -136,8 +137,7 @@ header a:hover {
     /* Faz a imagem preencher todo o espaço */
     background-position: center;
     /* Centraliza a imagem */
-
-    width: 100%;
+    max-width: 100vw;
     height: 110vh;
     display: flex;
     flex-direction: column;
@@ -149,7 +149,7 @@ header a:hover {
 
 .alem {
     position: relative;
-    width: 100%;
+    max-width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -161,7 +161,7 @@ header a:hover {
 .image {
     position: absolute;
     /* Permite posicionar em locais específicos */
-    max-width: 100%;
+    max-width: 100vw;
     /* Escala a imagem em dispositivos menores */
     height: auto;
     z-index: 0;
@@ -194,7 +194,7 @@ header a:hover {
 .somos {
     position: relative;
     /* Ok para contexto de posicionamento */
-    width: 100%;
+    max-width: 100vw;
     min-height: 100vh;
     /* Garante altura mínima */
     background-image: url('/static/img/background_somos.png');
@@ -225,7 +225,7 @@ header a:hover {
     top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 100%;
+    max-width: 100vw;
     height: auto;
     z-index: 0;
     /* Fica atrás do conteúdo*/
@@ -256,7 +256,7 @@ header a:hover {
 
 .servicos {
     height: 85vh;
-    width: 100%;
+    width: 100vw;
     /* 100% da largura da viewport */
     display: flex;
     /* Garante que os itens sejam alinhados */
@@ -320,7 +320,7 @@ header a:hover {
 
 
 .criacao {
-    width: 100%;
+    max-width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -399,7 +399,7 @@ header a:hover {
     background-position: center;
     background-color: #fff;
 
-    width: 100%;
+    max-width: 100vw;
     height: 105vh;
 
     display: flex;
@@ -422,7 +422,7 @@ header a:hover {
 
 
 .explicacao-metodologia {
-    width: 100%;
+    max-width: 100vw;
     height: auto;
 
     display: flex;
@@ -440,7 +440,7 @@ header a:hover {
 .ex-conteudo {
     display: flex;
     flex-direction: column;
-    width: 1080px;
+    width: 1280px;
     justify-content: center;
     align-items: center;
 }
@@ -528,7 +528,7 @@ h1.titulo-forte {
 }
 
 .tirar-duvida {
-    width: 100%;
+    max-width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -611,7 +611,7 @@ h1.titulo-forte {
 
 footer {
     margin-top: 4rem;
-    max-width: 100%;
+    max-width: 100vw;
     background-color: #1d1d1d;
     color: #fff;
     text-align: center;
@@ -653,12 +653,118 @@ footer {
         font-size: 70%;
         /* Reduz base para 14.4px */
     }
+
+    header {
+        width: calc(100vw - 18px);
+    }
 }
 
 
 @media (max-width: 480px) {
     html {
         font-size: 50%;
+
         /* Reduz base para 12.8px */
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .criacao-content,
+    .links-case,
+    .trafego-content {
+        width: 95vw;
+    }
+
+    header {
+        width: calc(100vw - 18px);
+    }
+
+    .explicacao-metodologia,
+    .ex-conteudo,
+    .destaque-content,
+    .tirar-duvida-title {
+        width: 100vw;
+    }
+
+    .explicacao-metodologia h1,
+    h2 {
+        max-width: 90vw;
+    }
+
+    .quadros-metodologia {
+        width: 100vw;
+        flex-wrap: wrap;
+        gap: 2;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .quadro {
+        width: 80%;
+    }
+
+    .destaque-content {
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tirar-duvida-title h2 {
+        font-size: 50%;
+    }
+
+    .titulo-conteudo {
+        margin-left: 0;
+        margin-top: 30%;
+    }
+
+
+    .box-pergunta {
+        padding: 20px;
+    }
+
+    .box-resposta {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .box-resposta a {
+        font-size: 20px;
+    }
+
+    .somos-content {
+        padding: 20px;
+    }
+
+    .alem {
+        max-width: 390px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .alem h3 {
+        max-width: 90vw;
+        font-size: 50px;
+    }
+
+    .alem strong {
+        max-width: 90vw;
+        margin: 0;
+        font-size: 20px;
+        text-align: justify;
+    }
+
+    .alem p {
+        max-width: 90vw;
+        font-size: 16px;
     }
 }
